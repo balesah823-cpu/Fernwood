@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fernwood Books — Independent Bookshop</title>
+<meta name="description" content="Fernwood Books is an independent neighborhood bookshop. Browse our picks, learn our story, and visit us in person.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:opsz@8..60&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg>
+      Fernwood Books
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+          Home</a></li>
+        <li><a href="about.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+          About Us</a></li>
+        <li><a href="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div>
+      <p class="hero-eyebrow">Neighborhood bookshop, est. 2011</p>
+      <h1>Shelves stocked by people who actually read the books.</h1>
+      <p>Fernwood Books is a small, independent shop on the corner of Elm and 9th. We hand-pick every title, host a monthly reading circle, and keep the lights on late for anyone who needs one more chapter before closing.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+          Visit the shop
+        </a>
+        <a class="btn btn-ghost" href="about.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+          Our story
+        </a>
+      </div>
+    </div>
+    <div class="spine-stack" aria-hidden="true">
+      <div class="spine s1"><span>FICTION</span></div>
+      <div class="spine s2"><span>POETRY</span></div>
+      <div class="spine s3"><span>ESSAYS</span></div>
+      <div class="spine s4"><span>HISTORY</span></div>
+      <div class="spine s5"><span>NATURE</span></div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>This week on the counter</h2>
+      <span class="sub">Picked by the staff, restocked every Monday</span>
+    </div>
+    <div class="book-grid">
+      <article class="book-card">
+        <span class="tag">Fiction</span>
+        <h3>The Quiet Ledger</h3>
+        <p class="author">Mira Solano</p>
+        <p>A slow-burn novel about a small-town accountant who starts noticing numbers that don't add up in her neighbors' lives.</p>
+      </article>
+      <article class="book-card rust">
+        <span class="tag">Essays</span>
+        <h3>Notes from the Understory</h3>
+        <p class="author">Del Achebe</p>
+        <p>Short, sharp essays on forests, attention, and what it means to grow slowly in a fast world.</p>
+      </article>
+      <article class="book-card gold">
+        <span class="tag">Poetry</span>
+        <h3>Salt Almanac</h3>
+        <p class="author">Yuki Tanaka</p>
+        <p>A year of tide-pool poems, one for each month, written from a cabin on the Oregon coast.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Browse by shelf</h2>
+    </div>
+    <div class="shelf-list">
+      <a class="shelf-chip" href="#">Fiction</a>
+      <a class="shelf-chip" href="#">Poetry</a>
+      <a class="shelf-chip" href="#">History</a>
+      <a class="shelf-chip" href="#">Essays</a>
+      <a class="shelf-chip" href="#">Nature Writing</a>
+      <a class="shelf-chip" href="#">Children's</a>
+      <a class="shelf-chip" href="#">Local Authors</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>&copy; 2026 Fernwood Books. 214 Elm Street.</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> &nbsp;·&nbsp;
+      <a href="about.html">About Us</a> &nbsp;·&nbsp;
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

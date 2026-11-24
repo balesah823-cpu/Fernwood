@@ -1,0 +1,118 @@
+/* nav.css — site header and navigation bar */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--forest-dark);
+  border-bottom: 3px solid var(--gold);
+}
+
+.nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--paper-light);
+  letter-spacing: 0.01em;
+}
+
+.brand svg { width: 26px; height: 26px; max-width: 26px; flex: 0 0 26px; }
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper-light);
+}
+
+.nav-toggle svg { width: 24px; height: 24px; max-width: 24px; }
+
+.main-nav ul {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.35rem 1rem;
+  font-size: 0.98rem;
+  color: var(--paper);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.main-nav a svg {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  flex: 0 0 18px;
+  opacity: 0.85;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--gold-light);
+}
+
+.main-nav a[aria-current="page"] {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+  font-weight: 600;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-flex; }
+
+  .main-nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--forest-dark);
+    border-bottom: 3px solid var(--gold);
+    display: none;
+  }
+
+  .main-nav.is-open { display: block; }
+
+  .main-nav ul {
+    flex-direction: column;
+    padding: 0.5rem 1.5rem 1.25rem;
+  }
+
+  .main-nav a {
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid rgba(243, 236, 221, 0.12);
+    margin-bottom: 0;
+  }
+
+  .main-nav a[aria-current="page"] {
+    border-bottom-color: rgba(243, 236, 221, 0.12);
+  }
+}

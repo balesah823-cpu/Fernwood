@@ -1,0 +1,445 @@
+/* style.css — Fernwood Books */
+
+:root {
+  --ink: #241f1a;
+  --paper: #efe6d2;
+  --paper-light: #faf5e9;
+  --forest: #22463a;
+  --forest-dark: #16302a;
+  --gold: #c08a3e;
+  --gold-light: #e3b56f;
+  --rust: #9c4632;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: "Inter", -apple-system, "Segoe UI", sans-serif;
+
+  --max-width: 1140px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--forest-dark);
+  line-height: 1.15;
+}
+
+p { max-width: 68ch; }
+
+.text-block p,
+.about-copy p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.35rem;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.btn svg { width: 18px; height: 18px; }
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--rust);
+  color: var(--paper-light);
+}
+.btn-primary:hover { background: #82372a; }
+
+.btn-ghost {
+  border-color: var(--forest-dark);
+  color: var(--forest-dark);
+}
+.btn-ghost:hover { background: rgba(34, 70, 58, 0.08); }
+
+/* ---------- Hero (home) ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 4rem 0 3.5rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--rust);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* Spine stack illustration */
+.spine-stack {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.55rem;
+  height: 320px;
+}
+
+.spine {
+  width: 46px;
+  border-radius: 3px 3px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1rem;
+  box-shadow: inset -6px 0 10px rgba(0,0,0,0.12);
+}
+
+.spine span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.92);
+}
+
+.spine.s1 { height: 78%; background: var(--forest); }
+.spine.s2 { height: 100%; background: var(--rust); }
+.spine.s3 { height: 62%; background: var(--gold); }
+.spine.s4 { height: 88%; background: var(--forest-dark); }
+.spine.s5 { height: 70%; background: #6b4a2f; }
+
+/* ---------- Section headings ---------- */
+
+.section {
+  padding: 3rem 0;
+  border-top: 1px solid rgba(36, 31, 26, 0.12);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  font-size: 1.8rem;
+}
+
+.section-head .sub {
+  font-family: var(--font-ui);
+  color: #5a5148;
+  font-size: 0.95rem;
+}
+
+/* ---------- Book grid ---------- */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.book-card {
+  background: var(--paper-light);
+  border: 1px solid rgba(36, 31, 26, 0.15);
+  padding: 1.4rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-left: 5px solid var(--forest);
+}
+
+.book-card.rust { border-left-color: var(--rust); }
+.book-card.gold { border-left-color: var(--gold); }
+
+.book-card .tag {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  text-transform: none;
+  color: var(--rust);
+  font-weight: 600;
+}
+
+.book-card h3 {
+  font-size: 1.2rem;
+}
+
+.book-card .author {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: #5a5148;
+}
+
+/* ---------- Shelf chips ---------- */
+
+.shelf-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.shelf-chip {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border: 1.5px solid var(--forest-dark);
+  color: var(--forest-dark);
+  border-radius: 2px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.shelf-chip:hover {
+  background: var(--forest-dark);
+  color: var(--paper-light);
+}
+
+/* ---------- Hours / info panel ---------- */
+
+.info-panel {
+  background: var(--forest-dark);
+  color: var(--paper-light);
+  padding: 2rem;
+}
+
+.info-panel h3 {
+  color: var(--gold-light);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(250,245,233,0.14);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+/* ---------- About page ---------- */
+
+.about-hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid rgba(36,31,26,0.12);
+}
+
+.about-hero h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 0.9rem; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  padding: 1.5rem;
+  background: var(--paper-light);
+  border: 1px solid rgba(36,31,26,0.15);
+}
+
+.value-card svg {
+  width: 28px;
+  height: 28px;
+  color: var(--rust);
+  margin-bottom: 0.9rem;
+}
+
+.value-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.value-card p { font-size: 0.95rem; }
+
+.staff-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.staff-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(36,31,26,0.1);
+}
+
+.staff-row:last-child { border-bottom: none; }
+
+.staff-name {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  color: var(--forest-dark);
+}
+
+.staff-role {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--rust);
+}
+
+/* ---------- Contact page ---------- */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  padding: 3rem 0 4rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--paper-light);
+  border: 1.5px solid rgba(36,31,26,0.3);
+  padding: 0.7rem 0.85rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+}
+
+.form-field textarea { resize: vertical; min-height: 130px; }
+
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border-color: var(--rust);
+}
+
+.field-error {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--rust);
+  min-height: 1.1em;
+}
+
+.form-status {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--forest);
+  background: rgba(34,70,58,0.08);
+  display: none;
+}
+
+.form-status.is-visible { display: block; }
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.contact-info-item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--rust);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.contact-info-item h3 {
+  font-size: 1rem;
+  font-family: var(--font-ui);
+  color: var(--forest-dark);
+  margin-bottom: 0.15rem;
+}
+
+.contact-info-item p {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  color: #45403a;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--forest-dark);
+  color: var(--paper);
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  padding: 2.5rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: rgba(250,245,233,0.75);
+}
+
+.footer-inner a:hover { color: var(--gold-light); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding-top: 2.5rem; }
+  .spine-stack { order: -1; height: 220px; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .staff-row { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+}
